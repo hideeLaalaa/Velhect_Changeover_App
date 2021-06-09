@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/lView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical|center_horizontal"
+    android:scrollbarSize="0dp">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbarSize="0dp"
+        android:scrollbarStyle="outsideOverlay">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="24dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="100dp"
+                    android:layout_height="36dp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="Sources"
+                    android:textColor="#242424"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="24dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="20dp"
+                        android:layout_weight="1"
+                        android:background="#F5F5F6"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textView7"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginRight="16dp"
+                            android:layout_marginBottom="10dp"
+                            android:autoText="false"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="Mains"
+                            android:textColor="#242424"
+                            app:autoSizeTextType="uniform" />
+
+                        <TextView
+                            android:id="@+id/mainV"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginBottom="16dp"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="0 Volt"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                            android:textColor="#242424"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="6dp"
+                        android:layout_marginRight="6dp"
+                        android:layout_weight="1"
+                        android:background="#F5F5F6"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textView12"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginRight="16dp"
+                            android:layout_marginBottom="10dp"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="Inverter"
+                            android:textColor="#242424" />
+
+                        <TextView
+                            android:id="@+id/invV"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginBottom="16dp"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="1 Volt"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                            android:textColor="#242424"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="20dp"
+                        android:layout_weight="1"
+                        android:background="#F5F5F6"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textView14"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="Generator"
+                            android:textColor="#242424" />
+
+                        <TextView
+                            android:id="@+id/genV"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginBottom="16dp"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="0 Volt"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                            android:textColor="#242424"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="464dp"
+                android:layout_marginTop="50dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView17"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="Load Status"
+                    android:textColor="#242424"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="24dp"
+                    android:orientation="vertical"
+                    android:scrollbarSize="1dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:background="#F5F5F6">
+
+                        <ImageView
+                            android:layout_width="56dp"
+                            android:layout_height="55dp"
+                            android:layout_marginTop="4dp"
+                            app:srcCompat="@mipmap/ic_launcher" />
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="63dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="15dp"
+                                android:layout_marginBottom="6dp"
+                                android:fontFamily="@font/poppins_medium"
+                                android:text="Connected Supply"
+                                android:textColor="#5F5F5F"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:id="@+id/conn"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="15dp"
+                                android:layout_marginBottom="3dp"
+                                android:fontFamily="@font/poppins_medium"
+                                android:text="Mains"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                android:textColor="#242424"
+                                android:textSize="20sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="63dp"
+                        android:layout_marginBottom="50dp"
+                        android:background="#F5F5F6">
+
+                        <ImageView
+                            android:layout_width="56dp"
+                            android:layout_height="55dp"
+                            android:layout_marginTop="4dp"
+                            app:srcCompat="@mipmap/ic_launcher" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="63dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="15dp"
+                                android:layout_marginBottom="6dp"
+                                android:fontFamily="@font/poppins_medium"
+                                android:text="Power Consumption"
+                                android:textColor="#5F5F5F"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:id="@+id/power"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="15dp"
+                                android:layout_marginBottom="3dp"
+                                android:fontFamily="@font/poppins_medium"
+                                android:text="0mAH"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                android:textColor="#242424"
+                                android:textSize="20sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="63dp"
+                        android:layout_marginBottom="20dp"
+                        android:background="#F5F5F6"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textView20"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="Fuel Level"
+                            android:textColor="#5F5F5F"
+                            android:textSize="18sp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <ProgressBar
+                                android:id="@+id/flBar"
+                                style="?android:attr/progressBarStyleHorizontal"
+                                android:layout_width="fill_parent"
+                                android:layout_height="25dp"
+                                android:layout_weight="2"
+                                android:max="100"
+                                android:progress="1"
+                                android:progressTint="#005F69" />
+
+                            <TextView
+                                android:id="@+id/fl"
+                                android:layout_width="35dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="3dp"
+                                android:layout_marginRight="1dp"
+                                android:fontFamily="@font/poppins_medium"
+                                android:gravity="center"
+                                android:text="1%"
+                                android:textAlignment="viewStart"
+                                android:textColor="#005F69"
+                                android:textSize="11sp" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#F5F5F6"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="Inverter Battery Level"
+                            android:textColor="#5F5F5F"
+                            android:textSize="18sp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <ProgressBar
+                                android:id="@+id/blBar"
+                                style="?android:attr/progressBarStyleHorizontal"
+                                android:layout_width="fill_parent"
+                                android:layout_height="25dp"
+                                android:layout_weight="2"
+                                android:max="100"
+                                android:progress="1"
+                                android:progressTint="#28BCE0" />
+
+                            <TextView
+                                android:id="@+id/bl"
+                                android:layout_width="35dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="3dp"
+                                android:layout_marginRight="1dp"
+                                android:fontFamily="@font/poppins_medium"
+                                android:gravity="center"
+                                android:text="1%"
+                                android:textAlignment="viewStart"
+                                android:textColor="#28BCE0"
+                                android:textSize="11sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
