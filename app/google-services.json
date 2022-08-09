@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "645494848195",
+    "firebase_url": "https://iotvoice-9d398-default-rtdb.firebaseio.com",
+    "project_id": "iotvoice-9d398",
+    "storage_bucket": "iotvoice-9d398.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:645494848195:android:62bd29c5c27247c3cf4076",
+        "android_client_info": {
+          "package_name": "com.example.mycourses"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "645494848195-namo03i20g3bloneho662s8f5lft3vj2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCOj927aBHIo40WSv_FewTSFhvqofCBKOY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "645494848195-namo03i20g3bloneho662s8f5lft3vj2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

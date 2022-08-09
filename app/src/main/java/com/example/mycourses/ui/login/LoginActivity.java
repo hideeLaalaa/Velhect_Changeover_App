@@ -75,7 +75,7 @@ public class LoginActivity extends AppCompatActivity {
 //                    Intent intent = new Intent(LoginActivity.this,HomeActivity.class);
 //                    ActivityOptionsCompat compat = ActivityOptionsCompat.makeSceneTransitionAnimation(LoginActivity.this);
 //                    startActivity(intent,compat.toBundle());
-                    Intent intent = new Intent(LoginActivity.this,HomeActivity.class);
+                    Intent intent = new Intent(LoginActivity.this,courseActivity.class);
                     ActivityOptionsCompat compat = ActivityOptionsCompat.makeSceneTransitionAnimation(LoginActivity.this);
 
                     startActivity(intent,compat.toBundle());
