@@ -34,7 +34,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:paddingStart="4dp"
-                android:text="Password" />
+                android:text="SSID" />
 
             <EditText
                 android:id="@+id/ssid"

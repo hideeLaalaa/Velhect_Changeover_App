@@ -3,11 +3,24 @@ apply plugin: 'com.google.gms.google-services'
 
 android {
 
+    signingConfigs {
+        debug {
+            storeFile file('E:\\Bequest\\vel.jks')
+            storePassword 'velhect'
+            keyAlias 'Velhect'
+            keyPassword 'velhect'
+        }
+        build {
+            storeFile file('E:\\Bequest\\vel.jks')
+            storePassword 'velhect'
+            keyAlias 'Velhect'
+            keyPassword 'velhect'
+        }
+    }
     compileSdkVersion 30
 
 
     defaultConfig {
-        applicationId "com.example.mycourses"
         minSdkVersion 21
         targetSdkVersion 30
         versionCode 1
@@ -20,6 +33,7 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            versionNameSuffix 'Ultratech'
         }
     }
     lint {

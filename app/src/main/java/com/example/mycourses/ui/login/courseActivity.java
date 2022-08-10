@@ -20,6 +20,8 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -141,11 +143,8 @@ public class courseActivity extends AppCompatActivity {
                     String wifiPassword = json.getString("wifiPassword");
 
                     Log.d(TAG, "DB Update");
-
                     frag1.setText((TextView) findViewById(R.id.phase1V), phase1);
                     frag1.setText((TextView) findViewById(R.id.phase2V),phase2);
-
-                    Log.d("Wifi", wifiConnected);
                     if(wifiConnected == "true"){
                         frag1.setImageRes((ImageView) findViewById(R.id.wifi_connected),R.drawable.wifi_connected);
                         frag1.setImageBkg((ImageView) findViewById(R.id.wifi_connected),R.color.conn);
@@ -153,9 +152,7 @@ public class courseActivity extends AppCompatActivity {
                         frag1.setImageRes((ImageView) findViewById(R.id.wifi_connected),R.drawable.wifi_off);
                         frag1.setImageBkg((ImageView) findViewById(R.id.wifi_connected),R.color.not_conn);
                     }
-
                     frag1.setText((TextView) findViewById(R.id.downtime_timer),getTimer(dt));
-                    Log.d("DT", String.valueOf( ContextCompat.getColor(courseActivity.this, R.color.default_text )));
                     if(dt == 0){
                         frag1.setImageRes((ImageView) findViewById(R.id.downtime_icon),R.drawable.empty_downtime);
                         frag1.setTextColor((TextView) findViewById(R.id.downtime_label), ContextCompat.getColor(courseActivity.this, R.color.default_text ));
@@ -165,13 +162,6 @@ public class courseActivity extends AppCompatActivity {
                         frag1.setTextColor((TextView) findViewById(R.id.downtime_label),ContextCompat.getColor(courseActivity.this, R.color.error ));
                         frag1.setTextColor((TextView) findViewById(R.id.downtime_timer),ContextCompat.getColor(courseActivity.this, R.color.error ));
                     }
-
-                    Log.d("mainsON", mainsOn +"::"+( (""+mainsOn)=="false") );
-                    Log.d("genOn", genOn +"::"+((""+genOn)=="false") );
-                    Log.d("keyState", keystate +"::"+((""+keystate)=="false") );
-                    Log.d("systemOff", systemOff +"::"+((""+systemOff)=="false") );
-
-                    Log.d("Wifi", wifiConnected);
                     frag1.checkboxState((Switch) findViewById(R.id.mains_switch),mainsOn=="false"?false:true);
                     frag1.checkboxState((Switch) findViewById(R.id.gen_switch),genOn=="false"?false:true);
                     frag1.checkboxState((Switch) findViewById(R.id.keystate_switch),keystate=="false"?false:true);
@@ -185,11 +175,15 @@ public class courseActivity extends AppCompatActivity {
                     frag2.setInput((EditText) findViewById(R.id.ssid_password),wifiPassword);
 
                     if(checkgen == "true"){
+                        Animation animation = AnimationUtils.loadAnimation(getApplicationContext(),
+                                R.anim.notify);
+                        LinearLayout i = (LinearLayout) findViewById(R.id.checkgen_layout);
+                        i.startAnimation(animation);
                         frag1.viewState((LinearLayout) findViewById(R.id.checkgen_layout),View.VISIBLE);
                     }else{
+                        ((LinearLayout) findViewById(R.id.checkgen_layout)).clearAnimation();
                         frag1.viewState((LinearLayout) findViewById(R.id.checkgen_layout),View.GONE);
                     }
-
 
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -199,34 +193,9 @@ public class courseActivity extends AppCompatActivity {
             @Override
             public void onCancelled(DatabaseError error) {
                 // Failed to read value
-                Log.w(TAG, "Failed to read value.", error.toException());
+                Toast.makeText(getApplicationContext(), "error fetching data", Toast.LENGTH_SHORT).show();
             }
         });
-
-
-//        //spinner crank
-        String[] secs = new String[]{"1 Second", "2 Seconds", "3 Seconds","4 Seconds", "5 Seconds", "6 Seconds","7 Seconds", "8 Seconds", "9 Seconds"};
-        String[] hrs = new String[]{"1 Hour", "2 Hours", "3 Hours","4 Hours", "5 Hours", "6 Hours","7 Hours", "8 Hours", "9 Hours"};
-//        builder.setView(frag2);
-//
-//        (Spinner)fragmentView.findViewById(R.id.spinner1);
-
-//        spinner = (Spinner) findViewById(frag2.getActivity().R.id.gen_crank_time);
-//        Log.d(TAG, String.valueOf(spinner));
-//        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-//                R.layout.support_simple_spinner_dropdown_item,secs);
-//
-////        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-//        spinner.setAdapter(adapter);
-
-//        ((Spinner)findViewById(R.id.gen_crank_time)).setAdapter(new ArrayAdapter<String>(this,
-//                R.layout.support_simple_spinner_dropdown_item,secs));
-//        ((Spinner)findViewById(R.id.gen_up_time)).setAdapter(new ArrayAdapter<String>(this,
-//                R.layout.support_simple_spinner_dropdown_item,hrs));
-//        ((Spinner)findViewById(R.id.inverter_time)).setAdapter(new ArrayAdapter<String>(this,
-//                R.layout.support_simple_spinner_dropdown_item,hrs));
-
-
 
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -244,6 +213,8 @@ public class courseActivity extends AppCompatActivity {
 //                frag1.setText((TextView) findViewById(R.id.fl),"100%");
             }
         });
+
+
 
     }
 

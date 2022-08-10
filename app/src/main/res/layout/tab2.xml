@@ -193,10 +193,11 @@
 
                                 <TextView
                                     android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
+                                    android:layout_height="3dp"
                                     android:layout_weight="2"
                                     android:fontFamily="@font/poppins_medium"
                                     android:gravity="center"
+                                    android:paddingTop="3dp"
                                     android:text="Manual Mains"
                                     android:textColor="#5F5F5F"
                                     android:textSize="18sp" />
@@ -210,6 +211,7 @@
                                     android:minHeight="48dp"
                                     android:showText="false"
                                     android:splitTrack="false"
+                                    android:tag="manualMainsOn"
                                     tools:checked="false" />
 
                             </LinearLayout>
@@ -230,6 +232,7 @@
                                     android:layout_gravity="center"
                                     android:layout_weight="2"
                                     android:fontFamily="@font/poppins_medium"
+                                    android:paddingTop="3dp"
                                     android:text="Manual Gen"
                                     android:textColor="#5F5F5F"
                                     android:textSize="18sp" />
@@ -243,6 +246,7 @@
                                     android:minHeight="48dp"
                                     android:showText="false"
                                     android:splitTrack="false"
+                                    android:tag="manualGenOn"
                                     tools:checked="false" />
 
                             </LinearLayout>
@@ -286,6 +290,7 @@
                                     android:clickable="false"
                                     android:fontFamily="@font/poppins_medium"
                                     android:gravity="center"
+                                    android:paddingTop="3dp"
                                     android:text="Keystate"
                                     android:textColor="#5F5F5F"
                                     android:textSize="18sp" />
@@ -299,6 +304,7 @@
                                     android:minHeight="48dp"
                                     android:showText="false"
                                     android:splitTrack="false"
+                                    android:tag="keyState"
                                     tools:checked="false" />
 
                             </LinearLayout>
@@ -319,6 +325,7 @@
                                     android:layout_weight="2"
                                     android:fontFamily="@font/poppins_medium"
                                     android:gravity="center"
+                                    android:paddingTop="3dp"
                                     android:text="Off System"
                                     android:textColor="#5F5F5F"
                                     android:textSize="18sp" />
@@ -332,6 +339,7 @@
                                     android:minHeight="48dp"
                                     android:showText="false"
                                     android:splitTrack="false"
+                                    android:tag="offsystem"
                                     tools:checked="false" />
 
                             </LinearLayout>

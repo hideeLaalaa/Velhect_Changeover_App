@@ -5,13 +5,17 @@ import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
+import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
 
@@ -21,14 +25,41 @@ import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 
 import com.example.mycourses.R;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class Frag1 extends Fragment {
     View v;
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference myRef = database.getReference().child("ChangeOver");
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         v = inflater.inflate(R.layout.tab2,container,false);
+
+        CompoundButton.OnCheckedChangeListener checks = (new CompoundButton.OnCheckedChangeListener() {
+
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                checkChanged(buttonView.getTag().toString(),isChecked );
+            }
+        });
+
+        ((Switch) v.findViewById(R.id.system_switch)).setOnCheckedChangeListener(checks);
+        ((Switch) v.findViewById(R.id.mains_switch)).setOnCheckedChangeListener(checks);
+        ((Switch) v.findViewById(R.id.keystate_switch)).setOnCheckedChangeListener(checks);
+        ((Switch) v.findViewById(R.id.gen_switch)).setOnCheckedChangeListener(checks);
+
         return v;
+    }
+
+    public void checkChanged(String key,boolean s){
+//        Log.d("key; ", key +"");
+//        Log.d("switch; ", s.isChecked() +"");
+        myRef.child(key).setValue(s);
+        if(key.equals("offsystem")){
+            myRef.child("systemOff").setValue(s);
+        }
     }
 
     public void setText(TextView view, String text){
